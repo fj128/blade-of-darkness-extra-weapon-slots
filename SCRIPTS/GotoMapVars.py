@@ -42,7 +42,7 @@ class MainCharState(GameState.EntityPersonState):
 			for name in Actions.GetListOfObjectsAt(inv,i):
 				self.Inventory["Objects"].append(self.__GetObjAux(name))
 
-		self.Inventory["maxWeapons"]=inv.maxWeapons
+		self.Inventory["maxWeapons"]=inv.maxWeapons=8
 		self.Inventory["Weapons"]=[]
 		for i in range(inv.nWeapons):
 			self.Inventory["Weapons"].append(self.__GetObjAux(inv.GetWeapon(i)))
@@ -246,7 +246,7 @@ def RestoreMainCharState(key):
       props[2]["InvRight"]     = None
       props[2]["InvRightBack"] = None
       props[2]["InvLeftBack"]  = None
-      
+
     CreateMainCharWithProps(props)
     return 1
   return 0

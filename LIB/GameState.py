@@ -340,7 +340,7 @@ class EntityPersonState(EntityBipedState):
             for name in Actions.GetListOfObjectsAt(inv,i):
                 self.Inventory["Objects"].append(name)
 
-        self.Inventory["maxWeapons"]=inv.maxWeapons
+        self.Inventory["maxWeapons"]=inv.maxWeapons=8
         self.Inventory["Weapons"]=[]
         for i in range(inv.nWeapons):
             self.Inventory["Weapons"].append(inv.GetWeapon(i))

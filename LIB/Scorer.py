@@ -192,6 +192,8 @@ def SetEnemiesData(pj):
 
 __wNULL=BUIx.CreateNULLWidget()
 char=Bladex.GetEntity("Player1")
+inv=char.GetInventory()
+inv.maxWeapons=8
 
 
 
@@ -616,9 +618,9 @@ wEnemiesFrame.AddWidget(wEnemyRight,E_ICON_DISTANCE*5+2*E_CENTRAL_DISTANCE+E_ARR
 wEnemyRight.SetAlpha(1.0)
 wEnemyRight.SetColor(255,255,255)
 
-
-RInitAlpha=[1.0,0.3,0.2,0.1,0.05]
-RInitPositions=[(5,10),(35,20),(75,30),(110,40),(140,50)]
+# Add enough right hand slots
+RInitAlpha=[1.0,0.3,0.2,0.1,0.05] + [0.05] * 10
+RInitPositions=[(5,10),(35,20),(75,30),(110,40),(140,50)] + [(140,50)] * 10
 wRightHand=ScorerWidgets.B_HandWidget(wFrame,"RightHand",150,150,"Right",
                                       RInitAlpha,RInitPositions)
 LInitAlpha=[1.0,0.3,0.2,0.1]
